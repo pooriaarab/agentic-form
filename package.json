@@ -1,6 +1,6 @@
 {
   "name": "agentic-form",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Validate form leads and write local NDJSON or POST to webhooks and Agentic CRM with a Node.js library, CLI, and MCP server.",
   "keywords": [
     "webhook",
