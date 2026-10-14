@@ -1,6 +1,6 @@
 # agentic-form
 
-Accept one form post. Validate it. Store a lead.
+agentic-form validates form posts and returns leads for webhooks and Agentic CRM. Use the CLI or MCP server to preview a lead, then send it live when ready.
 
 ## Install
 
@@ -10,31 +10,39 @@ npm install agentic-form
 
 ## Quick start
 
-Dry run is the default. It stores nothing.
+Dry run is the default. It stores nothing and does not use the network.
 
 ```sh
 npx agentic-form --file lead.json
 ```
 
-## Three uses
+## Live vendors
 
-### CLI
+| Brand | Environment key | Live command |
+| --- | --- | --- |
+| Webhook | `AGENTIC_FORM_WEBHOOK_URL` | `agentic-form --file lead.json --live --sink webhook` |
+| Agentic CRM | `AGENTIC_CRM_URL`, `AGENTIC_CRM_API_KEY` | `agentic-form --file lead.json --live --sink agentic-crm` |
+
+## CLI
+
+Use `--live` to store locally or call a configured live sink.
 
 ```sh
 agentic-form --file lead.json --live
 ```
 
-### Library
+## Library
 
 ```ts
 import { storeLead } from "agentic-form";
-await storeLead({ name: "Ada", email: "ada@example.com" });
+
+const result = await storeLead({ name: "Ada", email: "ada@example.com" });
 ```
 
-### MCP
+## MCP
 
 ```sh
 npx agentic-form-mcp
 ```
 
-Use `store_lead`. Pass `dryRun: false` only when ready. Local storage is the default. Use `--sink webhook` with `AGENTIC_FORM_WEBHOOK_URL`, or `--sink agentic-crm` with `AGENTIC_CRM_URL` and `AGENTIC_CRM_API_KEY`.
+Use `validate_lead` to validate a post. Use `store_lead` to return a lead. `dryRun` defaults to `true`.
