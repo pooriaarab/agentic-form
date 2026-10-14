@@ -1,18 +1,20 @@
 {
   "name": "agentic-form",
   "version": "0.1.1",
-  "description": "Validate form posts and return leads to webhooks or Agentic CRM with a CLI and MCP agent.",
+  "description": "Validate form leads and write local NDJSON or POST to webhooks and Agentic CRM with a Node.js library, CLI, and MCP server.",
   "keywords": [
     "webhook",
     "agentic-crm",
     "form",
-    "forms",
+    "form-validation",
     "lead",
-    "leads",
-    "validate",
+    "lead-capture",
+    "email-validation",
+    "ndjson",
+    "nodejs",
+    "typescript",
     "cli",
-    "mcp",
-    "agent"
+    "mcp"
   ],
   "license": "MIT",
   "author": "Pooria Arab",
