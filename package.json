@@ -1,6 +1,6 @@
 {
   "name": "agentic-form",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Validate form posts and return leads to webhooks or Agentic CRM with a CLI and MCP agent.",
   "keywords": [
     "webhook",
